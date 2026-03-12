@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import {
   ExceptionFilter,
   Catch,
@@ -23,7 +25,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
     const message =
       typeof exceptionResponse === 'object' &&
       'message' in (exceptionResponse as object)
-        ? (exceptionResponse as any).message
+        ? (exceptionResponse as { message: string | string[] }).message
         : exceptionResponse;
 
     if (status >= HttpStatus.INTERNAL_SERVER_ERROR) {

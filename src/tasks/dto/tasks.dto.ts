@@ -1,6 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { IsString, IsBoolean, IsOptional, MinLength, MaxLength, IsInt, Min } from 'class-validator';
+import {
+  IsString,
+  IsBoolean,
+  IsOptional,
+  MinLength,
+  MaxLength,
+  IsInt,
+  Min,
+} from 'class-validator';
 import { Type, Transform } from 'class-transformer';
 
 export class CreateTaskDto {
